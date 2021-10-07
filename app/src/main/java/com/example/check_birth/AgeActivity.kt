@@ -1,39 +1,41 @@
 package com.example.check_birth
 
+import android.annotation.SuppressLint
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import com.example.check_birth.databinding.ActivityMainBinding
+
+import com.example.check_birth.databinding.AgeActivityMainBinding
 import java.time.Year
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class AgeActivity : AppCompatActivity() {
 
-    lateinit var mBinding:ActivityMainBinding
+    lateinit var mBinding: AgeActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        mBinding = AgeActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
         mBinding.materialButton.setOnClickListener {
-            mBinding.textView3.text =""
-            try{
+            mBinding.textView3.text = ""
+            try {
                 val birthDate = mBinding.editTextDate.text.toString().toInt()
                 findAge(birthDate)
 
-            }catch (e:NumberFormatException){
+            } catch (e: NumberFormatException) {
 
             }
 
 
-
         }
     }
-    private fun findAge(birth:Int){
+
+    @SuppressLint("SetTextI18n")
+    private fun findAge(birth: Int) {
         val year = Calendar.getInstance().get(Calendar.YEAR)
-        val age = year-birth
+        val age = year - birth
         mBinding.textView3.text = " Your age is: ${age.toString()}"
 
 
