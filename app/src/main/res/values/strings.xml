@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Check_Birth</string>
+    <string name="check_age">Check your Age!!</string>
+    <string name="insert_birth">Insert your date birth</string>
 </resources>
