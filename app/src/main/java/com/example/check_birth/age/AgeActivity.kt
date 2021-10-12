@@ -1,12 +1,10 @@
-package com.example.check_birth
+package com.example.check_birth.age
 
 import android.annotation.SuppressLint
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import com.example.check_birth.databinding.AgeActivityMainBinding
-import java.time.Year
 import java.util.*
 
 class AgeActivity : AppCompatActivity() {
